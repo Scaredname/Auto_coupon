@@ -46,9 +46,12 @@ def use_coupon(user_id, user_server, coupon):
     return {*}
     """
 
+    options = webdriver.ChromeOptions()
+    options.add_argument("--headless=new")
+
     url = "https://event.withhive.com/ci/smon/evt_coupon"
     driver = webdriver.Chrome(
-        # executable_path="/mnt/d/download/chromedriver_win32/",
+        options=options,
     )
 
     # Navigate to the webpage
